@@ -17,7 +17,34 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<additionalparam>-Xdoclint:none</additionalparam>
 	</properties>
-
+	<licenses>
+		<license>
+			<name>Apache License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+	<developers>
+		<developer>
+			<name>Maximilian Pawlidi</name>
+			<email>info@pawlidi.de</email>
+			<organization>PAWLIDI.DE</organization>
+			<organizationUrl>https://www.pawlidi.de</organizationUrl>
+		</developer>
+	</developers>
+	<organization>
+		<name>PAWLIDI.DE</name>
+		<url>http://www.pawlidi.de</url>
+	</organization>
+	<scm>
+		<url>https://github.com/pawlidim</url>
+		<connection>https://github.com/pawlidim/AJavaCall.git</connection>
+		<developerConnection>pawlidim</developerConnection>
+	</scm>
+	<issueManagement>
+		<url>https://github.com/pawlidim/AJavaCall/issues</url>
+		<system>GitHub</system>
+	</issueManagement>
 	<repositories>
 		<repository>
 			<id>asterisk-java-mvn-repo</id>
@@ -32,9 +59,36 @@
 	</repositories>
 	<dependencies>
 		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
 			<groupId>org.asteriskjava</groupId>
 			<artifactId>asterisk-java</artifactId>
 			<version>2.0.4</version>
 		</dependency>
 	</dependencies>
+	<build>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<source>${maven.compiler.source}</source>
+					<target>${maven.compiler.target}</target>
+					<debug>${maven.compiler.debug}</debug>
+					<showWarnings>${maven.compiler.showWarnings}</showWarnings>
+					<showDeprecation>${maven.compiler.showDeprecation}</showDeprecation>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 </project>
